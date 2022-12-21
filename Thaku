@@ -1,0 +1,173 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("DOUBLE HUB | BLOXFRUIT", "BloodTheme")
+
+local Tab = Window:NewTab("Main")
+
+local Section = Tab:NewSection("Main")
+
+Section:NewButton("                         Copy Link Discord", "!", function()
+
+setclipboard("https://discord.gg/2Bm9jjZz")
+
+end)
+
+Section:NewButton("                         Copy Link Youtube", "!", function()
+
+setclipboard("https://youtube.com/@DoubleHub")
+
+end)
+
+local Section = Tab:NewSection("                               Farm City                   ")
+
+Section:NewToggle("Auto Red Orb ", "?", function(v)
+
+  _G.AutoFarm = v
+
+spawn(function()
+
+ pcall(function()
+
+   if _G.AutoFarm then
+
+for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetChildren()) do
+
+local args = {
+
+    [1] = "collectOrb",
+
+    [2] = v.Name,
+
+    [3] = "City"
+
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+end
+
+       end
+
+    end)
+
+   end)
+
+    end)
+
+end)
+
+Section:NewToggle("Auto Yellow Orb ", "?", function(c)
+
+_G.AutoYellow = c
+
+spawn(function()
+
+ pcall(function()
+
+   if _G.AutoFarm then
+
+for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetChildren()) do
+
+local args = {
+
+    [1] = "collectOrb",
+
+    [2] = v.Name,
+
+    [3] = "City"
+
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+end
+
+       end
+
+    end)
+
+   end)
+
+    end)
+
+end)
+
+Section:NewToggle("Auto Gem ", "?", function(g)
+
+_G.Gem = g
+
+spawn(function()
+
+ pcall(function()
+
+   if _G.AutoFarm then
+
+for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetChildren()) do
+
+local args = {
+
+    [1] = "collectOrb",
+
+    [2] = v.Name,
+
+    [3] = "City"
+
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+end
+
+       end
+
+    end)
+
+   end)
+
+    end)
+
+end)
+
+Section:NewToggle("Auto Rebirth ", "?", function(e)
+
+	_G.Rebirth = e
+
+	wait()
+
+	while _G.Rebirth == e
+
+		wait()
+
+		game.ReplicatedStorage.rEvents.rebirthEvent:FireServer("rebirthRequest")
+
+		end
+
+		end)
+
+Section:NewToggle("Auto Hoops", "?", function(b)
+
+_G.Hoops = b
+
+	wait()
+
+	while _G.Hoops == b
+
+		wait()
+
+    local children = workspace.Hoops:GetChildren()
+
+    for i, child in ipairs(children) do
+
+        if child.Name == "Hoop" then
+
+            child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+        end
+
+        end
+
+        end
+
+        end)
+
+		
